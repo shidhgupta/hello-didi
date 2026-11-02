@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8df" />
+  <meta name="description" content="hello_didi — a gentle little workspace for text and file tools." />
+  <title>hello_didi — your little text studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="nav">
+      <a class="brand" href="/" aria-label="hello didi home"><span class="brand-mark">h<span>✳</span></span><span>hello_didi<span class="brand-dot">.</span></span></a>
+      <span class="nav-note"><span class="status-dot"></span> your tiny productivity corner</span>
+      <a class="nav-link" href="#how-it-works">How it works <span>↗</span></a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>✦</span> A softer way to get things done</div>
+          <h1>Your words,<br><span class="highlight">a little more</span> lovely.</h1>
+          <p class="hero-description">Clean up text, find the important bits, and turn everyday files into something easier to work with. All in one happy little space.</p>
+          <div class="hero-pills"><span>✳ Text tools</span><span>↗ File helper</span><span>♡ No-fuss workflow</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div><div class="spark spark-one">✳</div><div class="spark spark-two">✦</div>
+          <div class="paper-card paper-back"></div>
+          <div class="paper-card paper-front"><div class="paper-top"><span class="mini-logo">h✳</span><span class="paper-dots">•••</span></div><div class="paper-title">a little clarity</div><div class="paper-line wide"></div><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-highlight">good ideas, neatly gathered ✨</div><div class="paper-check">✓</div></div>
+          <div class="flower">✿</div>
+        </div>
+      </section>
+
+      <section class="workspace" id="tools">
+        <div class="section-heading"><div><div class="eyebrow">THE LITTLE TOOLBOX</div><h2>What are we working on?</h2></div><span class="tiny-note">pick a tool, make a little magic <span>✧</span></span></div>
+        <div class="tabs" role="tablist" aria-label="Processing mode">
+          <button class="tab active" id="text-tab" role="tab" aria-selected="true" data-mode="text"><span>✎</span> Text studio</button>
+          <button class="tab" id="file-tab" role="tab" aria-selected="false" data-mode="file"><span>▧</span> File helper</button>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-header"><div class="tool-icon">✧</div><div><h3 id="tool-title">Give your text a little polish</h3><p id="tool-subtitle">Paste your paragraph below and choose what you'd like done.</p></div><span class="live-tag"><span></span> READY WHEN YOU ARE</span></div>
+          <div class="mode-panel" id="text-panel">
+            <label for="text-input">YOUR TEXT <span class="label-helper">Paste anything you’re working on</span></label>
+            <textarea id="text-input" placeholder="Once upon a time, there was a paragraph that needed a little tidying..."></textarea>
+            <div class="textarea-footer"><span id="input-count">0 characters</span><button class="text-button" id="sample-btn" type="button">Try a sample ↗</button></div>
+          </div>
+          <div class="mode-panel hidden" id="file-panel">
+            <label>YOUR FILE <span class="label-helper">One file at a time · up to 10 MB by default</span></label>
+            <label class="dropzone" id="dropzone" for="file-input"><input id="file-input" type="file" accept=".txt,.md,.csv,.json,.pdf,.docx" hidden /><span class="upload-icon">↑</span><strong>Drop your file here, or <u>browse</u></strong><span class="file-types">TXT · MD · CSV · JSON · PDF · DOCX</span><span class="selected-file hidden" id="selected-file"></span></label>
+            <p class="privacy-note">🔒 Files are processed in memory and are not saved by this app. Avoid uploading sensitive information.</p>
+          </div>
+          <div class="options-row"><div class="operation-control"><label for="operation">I'D LIKE TO</label><select id="operation"><option value="clean">Clean up spacing</option><option value="summary">Make a short summary</option><option value="keywords">Find keywords</option><option value="stats">Count words & details</option><option value="uppercase">UPPERCASE everything</option><option value="lowercase">lowercase everything</option><option value="titlecase">Title Case</option></select></div><button class="primary-btn" id="process-btn"><span>✨</span> Make it happen <span class="btn-arrow">→</span></button></div>
+          <div class="error-box hidden" id="error-box" role="alert"></div>
+          <div class="result-panel hidden" id="result-panel" aria-live="polite"><div class="result-heading"><div><span class="result-kicker">YOUR RESULT</span><h3>There we go. ♡</h3></div><div class="result-actions"><button class="secondary-btn" id="copy-btn">Copy result</button><button class="secondary-btn" id="download-btn">Download .txt</button></div></div><div class="stats-row" id="stats-row"></div><pre class="result-content" id="result-content"></pre><div class="extracted-wrap hidden" id="extracted-wrap"><details><summary>View extracted text from your file</summary><pre id="extracted-content"></pre></details></div></div>
+        </div>
+        <p class="under-card">Made for the messy first draft, the last-minute assignment, and everything in between. <span>☀</span></p>
+      </section>
+
+      <section class="how" id="how-it-works"><div class="eyebrow">SMALL STEPS, CLEARER WORK</div><h2>Simple as one, two, <span>ta-da.</span></h2><div class="steps"><article><div class="step-number">01</div><div class="step-icon">✎</div><h3>Bring your words</h3><p>Paste text or choose a supported document from your device.</p></article><article><div class="step-number">02</div><div class="step-icon">✧</div><h3>Pick your little helper</h3><p>Clean, summarize, discover keywords, or check your word count.</p></article><article><div class="step-number">03</div><div class="step-icon">♡</div><h3>Take it with you</h3><p>Copy your result or download it as a simple text file.</p></article></div></section>
+    </main>
+    <footer><a class="brand footer-brand" href="/"><span class="brand-mark">h<span>✳</span></span><span>hello_didi<span class="brand-dot">.</span></span></a><span>Little tools for a clearer day.</span><span class="footer-sun">☼</span></footer>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
